@@ -12,50 +12,52 @@ document.addEventListener("DOMContentLoaded", function(){
     let numbers = document.querySelectorAll("#btn-number");
     let operators = document.querySelectorAll("#btn-operator");
 
-    let previousScreen = document.querySelector(".previous");
-    let currentScreen = document.querySelector(".current");
+    let previousDisplay = document.querySelector(".previous");
+    let currentDisplay = document.querySelector(".current");
 
     numbers.forEach((number) => number.addEventListener("click", function(e){
-        handleNumber(e.target.textContent);
-        currentScreen.textContent = currentValue;
+        manipulateNumber(e.target.textContent);
+        currentDisplay.textContent = currentValue;
     }))
 
     operators.forEach((op) => op.addEventListener("click", function(e){
-        handleOperator(e.target.textContent);
-        previousScreen.textContent = previousValue + " " + operator;
-        currentScreen.textContent = currentValue;
+        manipulateOperator(e.target.textContent);
+        previousDisplay.textContent = previousValue + " " + operator;
+        currentDisplay.textContent = currentValue;
     }))
 
     clear.addEventListener("click", function(){
         previousValue = '';
         currentValue = '';
         operator = '';
-        previousScreen.textContent = currentValue;
-        currentScreen.textContent = currentValue;
+        previousDisplay.textContent = currentValue;
+        currentDisplay.textContent = currentValue;
     })
 
     equal.addEventListener("click", function(){
         if(currentValue != '' && previousValue != ''){
             calculate()
-            previousScreen.textContent = '';
-            if(previousValue.length <=5){
-                currentScreen.textContent = previousValue.slice(0.5)+ "...";
+            previousDisplay.textContent = '';
+            if(previousValue.length <= 5){
+                currentDisplay.textContent = previousValue;
+            }else{
+                currentDisplay.textContent = previousValue.slice(0.5)+ "...";
             }
         }        
         
     })
     decimal.addEventListener("click",function(){
-        addDecimal();
+        addDot();
     })
 })
 
-function handleNumber(num){
-if(currentValue.length <= 9){
+function manipulateNumber(num){
+if(currentValue.length <= 5){
     currentValue += num;
 }
 }
 
-function handleOperator(op){
+function manipulateOperator(op){
     operator = op;
     previousValue = currentValue;
     currentValue = '';
@@ -83,7 +85,7 @@ function roundNumber(num){
     return Math.round(num*1000) / 1000;
 }
 
-function addDecimal(){
+function addDot(){
     if(!currentValue.includes(".")){
         currentValue += '.';
     }
