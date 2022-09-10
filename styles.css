@@ -1,0 +1,114 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+#container{
+    background-color: black;
+}
+
+.btn{
+    height: 75px;
+    width: 75px;
+    margin: 15px;
+    font-size: 40px;
+}
+
+#btn-number{
+    border: 1px solid blue;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-number:hover{
+    background-color: blue;
+}
+
+#btn-operator{
+    border: 1px solid red;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-operator:hover{
+    background-color: red;
+}
+
+#btn-dot{
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-dot:hover{
+    background-color: red;
+}
+
+#btn-equal{
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-equal:hover{
+    background-color: red;
+}
+
+#btn-clear{
+    border: 1px solid yellow;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#btn-clear:hover{
+    background-color: orange;
+}
+
+.first-line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#display{
+    width: 300px;
+    border: 1px solid yellow;
+    height: 75px;
+    background-color: white;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.previous{
+    font-size: 20px;
+}
+
+.current{
+    font-size: 30px;
+}
+
+#title{
+    width: 450px;
+    border: 1px solid blue;
+    height: 75px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
